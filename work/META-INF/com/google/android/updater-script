@@ -1,0 +1,16 @@
+unmount("/system");
+show_progress(1.000000, 0);
+ui_print(" ");
+ui_print(" ");
+ui_print("LG Mods by Zacharee1");
+ui_print(" ");
+ui_print(" ");
+set_progress(0.100000);
+mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
+set_progress(0.200000);
+ui_print("Extracting system...");
+ui_print(" ");
+package_extract_dir("system", "/system");
+unmount("/system");
+set_progress(1.000000);
+ui_print("Installed!");
